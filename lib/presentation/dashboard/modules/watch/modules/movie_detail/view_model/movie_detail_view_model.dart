@@ -47,7 +47,7 @@ class MovieDetailViewModel extends CoreViewModel {
       }
     } catch (e) {
       if (e == 'trailer_not_found') {
-        pageError = 'Failed to fetch movie details';
+        pageError = 'Failed to load movie details';
         movie = null;
       }
       if (e is! CancelTokenException) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ten_twenty_test/app/core/core_views/core_view.dart';
 import 'package:ten_twenty_test/presentation/dashboard/modules/watch/modules/watch_trailer/view_model/watch_trailer_view_model.dart';
+import 'package:ten_twenty_test/shared/helpers/utils.dart';
 import 'package:ten_twenty_test/widgets/others/app_loading_indicator.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -21,7 +22,8 @@ class WatchTrailerView extends CoreView<WatchTrailerViewModel> {
           : Center(
               child: YoutubePlayer(
                 controller: viewModel.controller!,
-                topActions: [],
+                width: screenWidth(context),
+                aspectRatio: screenHeight(context) / screenWidth(context),
                 bottomActions: [
                   CurrentPosition(),
                   ProgressBar(isExpanded: true),

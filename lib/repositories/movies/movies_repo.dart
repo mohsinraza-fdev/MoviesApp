@@ -64,7 +64,7 @@ class MoviesRepo {
       if (officialMovies.isEmpty) {
         throw ('trailer_not_found');
       }
-      return (officialMovies[0]["key"] as String);
+      return (officialMovies.last["key"] as String);
     } catch (e) {
       rethrow;
     }
