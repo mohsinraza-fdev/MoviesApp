@@ -17,16 +17,16 @@ class DashboardView extends CoreView<DashboardViewModel> {
           resizeToAvoidBottomInset: false,
           body: Stack(
             children: [
-              PopScope(
-                onPopInvoked: (canPop) {
+              WillPopScope(
+                onWillPop: () async {
                   if (AppNavigator.dashboardKey?.currentState?.canPop() ??
                       false) {
                     AppNavigator.pop(
                       navigatorType: NavigatorType.dashboard,
                     );
-                    return;
+                    return false;
                   }
-                  AppNavigator.pop();
+                  return true;
                 },
                 child: Navigator(
                   key: AppNavigator.dashboardKey,

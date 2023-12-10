@@ -240,8 +240,7 @@ class MovieDetailView extends CoreView<MovieDetailViewModel> {
                 children: [
                   const SizedBox(width: 13),
                   GestureDetector(
-                    onTap: () => AppNavigator.pop(
-                        navigatorType: NavigatorType.dashboard),
+                    onTap: () => AppNavigator.pop(),
                     child: Assets.icons.arrowBack.svg(
                       height: 30,
                       width: 30,
