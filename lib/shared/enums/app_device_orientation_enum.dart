@@ -1,0 +1,4 @@
+enum AppDeviceOrientation {
+  potrait,
+  landscape,
+}
